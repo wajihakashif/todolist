@@ -1,234 +1,96 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>calculater design</title>
-    </head>
+<head>
+    <title>To-Do List</title>
+
     <style>
-       
- body{
-              margin: 0px;
-            padding: 0px;
-            background-color: #121212;
-
-        }
-      
-        
-          #header{
-            height: 120px;
-            width: 100%;
-            padding: 10px ;
-            border-width:0px 0px 2px 0px ;
-            background-color: black;
-            color: rgba(235, 201, 10, 0.829);
-            border-style: double;
-            align-items: center;
-            display: flex;
-            border-bottom: 10px solid  rgba(235, 201, 10, 0.829);
-            border-radius: 0%;
+        body {
+            font-family: Arial;
+            background-color: rgb(160, 107, 173);
+            text-align: center;
+            padding: 50px;
         }
 
-        .logo{
-
-            width: 30%;
-            display: flex;
-            align-items:start;
+        .container {
+            background-color: white;
+            padding: 20px;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
         }
 
-        .logo img{
-
-            height: 100px;
-            width: 100px;
+        input {
+            padding: 10px;
+            width: 60%;
             
         }
 
-        .h1 {
-            margin-top: 5px;
-            color: #D6A64F;
-            font-size: 20px;
-            margin-right: 120px;
-            text-align: center;
-            width: 100%;
-            text-shadow: 2px 2px 4px white;
+        button {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
 
-        .line {
-           
-            text-align: center;
-            margin-top: 0 auto;
-            color:  white;
-            font-size: 25px;
-           width: 100%;
-
+        ul {
+            padding: 0;
         }
- 
 
-.calculator {
-     margin: 30px auto 0;
-   margin-top: 30px;
-width: 320px;
+        li {
+            list-style: none;
+            background-color: lightgray;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-padding: 20px;
-background-color: black;
-border: 3px solid rgb(3, 0, 0);
-border-radius: 20px;
-box-shadow: 0  2px 12px rgb(253, 253, 253);
- box-sizing: border-box;
-}
-
-.display {
-     justify-items: center;
-height: 90px;
-width: 100%;
-background-color: rgba(236, 232, 224, 0.938);
-color: #222831;
-border-radius: 12px;
-margin-bottom: 10px;
-padding: 15px;
-
-display: flex;
- justify-items: flex-end;
-align-items: center;
-font-size: 35px;
-font-weight: bold;
-border: 2px solid #393e46;
-overflow: hidden;
-}
-
-
-.buttons {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 10px;
-width: 100%;
-}
-
-
-button {
-height: 55px;
-border: 1px solid #555555;
-border-radius: 10px;
-background-color: #393e46;
-color: white;
-font-size: 20px;
-font-weight: bold;
-cursor: pointer;
-transition: 0.2s;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.number {
-background-color: #393e46;
-color: white;
-}
-
-
-.operator {
-background-color: #303669fb;
-color: white;
-border: none;
-}
-
-
-.clear {
-background-color: #c53c32;
-color: white;
-border: none;
-}
-
-
-.equal {
-background-color: #208d60;
-color: white;
-grid-row: span 2;
-height: 120px;
-border: none;
-}
-
-
-.zero {
-grid-column: span 2;
-}
-
-
-button {
-opacity: 0.8;
-}
-
-
-@media (max-width: 400px) {
-.calculator {
-width: 90%;
-padding: 15px;
-}
-
-button {
-    height: 50px;
-    font-size: 18px;
-}
-
-.display {
-    height: 80px;
-    font-size: 30px;
-}
-
-}
+        .delete {
+            background-color: rgb(109, 6, 6);
+        }
     </style>
-          <body>
-        <div id="header">
-       
-            <div class="logo">
-            <img
-                src="https://img.magnific.com/premium-vector/letter-w-beauty-flower-logo-with-creative-concept-company-business-decorative-flower-beauty-spa-premium-vector-template_754537-5440.jpg?semt=ais_hybrid&w=740&q=80" 
-                alt="wajiha logo">
-        </div>   
-<div>
-         <div class="h1">
-        <h1>CALCULATER</h1>
-</div>
+</head>
 
-    <div class="line">
-        <p>By using Html & CSS</p>
-    </div>
+<body>
 
-    </div>
-</div>
-        <div class="calculator">
+    <div class="container">
 
-    
-    <div class="display">0</div>
+        <h1>My To-Do List</h1>
 
-   
-    <div class="buttons">
+        <input type="text" id="taskInput"
+        placeholder="Enter your task">
 
-        <button class="clear">AC</button>
-        <button class="clear">C</button>
-        <button class="operator">÷</button>
-        <button class="operator">×</button>
+        <button onclick="addTask()">Add</button>
 
-        <button class="number">7</button>
-        <button class="number">8</button>
-        <button class="number">9</button>
-        <button class="operator">−</button>
-
-        <button class="number">4</button>
-        <button class="number">5</button>
-        <button class="number">6</button>
-        <button class="operator">+</button>
-
-        <button class="number">1</button>
-        <button class="number">2</button>
-        <button class="number">3</button>
-        <button class="equal">=</button>
-
-        <button class="number zero">0</button>
-        <button class="number">.</button>
+        <ul id="taskList"></ul>
 
     </div>
 
-</div>
-    </body>
+    <script>
+
+        function addTask() {
+
+            let task = document.getElementById("taskInput").value;
+
+            if (task === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            li.innerHTML = task +
+            '<button class="delete" onclick="this.parentElement.remove()">Delete</button>';
+
+            document.getElementById("taskList").appendChild(li);
+
+            document.getElementById("taskInput").value = "";
+
+        }
+
+    </script>
+
+</body>
 </html>
